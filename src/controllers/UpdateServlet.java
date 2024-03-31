@@ -40,8 +40,8 @@ public class UpdateServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            // セッションスコープからメッセージのIDを取得して
-            // 該当のIDのメッセージ1件のみをデータベースから取得
+            // セッションスコープからタスクのIDを取得して
+            // 該当のIDのタスク1件のみをデータベースから取得
             // セッションスコープから取得したデータ(Object型)をInteger型にキャスト
             Task t = em.find(Task.class, (Integer)(request.getSession().getAttribute("task_id")));
 
